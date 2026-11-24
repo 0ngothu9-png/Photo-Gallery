@@ -1,0 +1,96 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dedede;
+  padding: 5px;
+  margin: 15px;
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 1.95em;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  text-align: center;
+}
+
+/* Giao diện Mobile mặc định (không dùng @media) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+figure {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  margin-top: 8px;
+}
+
+/* 1. Giao diện Tablet (>= 772px) */
+@media screen and (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  figure:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 2. Giao diện Màn hình lớn (>= 992px) */
+@media screen and (min-width: 992px) {
+  figure {
+    border-radius: 0;
+  }
+
+  figure:nth-child(3n) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 3. Chế độ giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 4. Chế độ nền tối (Dark Mode) */
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #1a1a1a;
+    color: #fff3b0;
+    border-color: #000000;
+  }
+}
